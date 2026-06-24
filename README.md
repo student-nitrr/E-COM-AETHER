@@ -37,3 +37,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 <img width="1461" height="1600" alt="WhatsApp Image 2026-06-24 at 11 33 54" src="https://github.com/user-attachments/assets/94aeddf3-48a3-4087-8f70-76fc861a8f25" />
+
+#links
+http://localhost:3000/admin/settings
+http://localhost:3000/products?category=best-sellers
+http://localhost:3000/
+http://localhost:3000/account
