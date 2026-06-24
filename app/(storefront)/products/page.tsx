@@ -73,15 +73,14 @@ function ProductsContent() {
 
       let query = supabase
         .from("products")
-        .select("id, title, slug, price, sale_price, category_id, created_at, product_images(image_url, sort_order)")
-        .eq("status", "active")
-        .order("created_at", { ascending: false });
+        .select("id, title, slug, price, sale_price, category_id, created_at, product_images(image_url, sort_order)");
 
       if (selectedCategoryId) {
         query = query.eq("category_id", selectedCategoryId);
       }
 
       const { data, error } = await query;
+      console.log('Fetched products from Supabase:', data);
 
       if (error) { console.error("Error fetching products:", error); setLoading(false); return; }
 
