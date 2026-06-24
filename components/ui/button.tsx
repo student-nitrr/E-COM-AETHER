@@ -11,6 +11,7 @@ export interface ButtonProps extends Omit<HTMLMotionProps<"button">, "ref"> {
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", children, ...props }, ref) => {
+    const typedChildren = children as React.ReactNode;
     const baseStyles =
       "inline-flex items-center justify-center font-sans font-medium uppercase tracking-widest transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-1 disabled:opacity-50 disabled:pointer-events-none rounded-none relative overflow-hidden group";
 
@@ -39,7 +40,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {variant === "primary" && (
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:animate-[shimmer_1.5s_infinite]" />
         )}
-        <span className="relative z-10 flex items-center justify-center gap-2">{children}</span>
+        <span className="relative z-10 flex items-center justify-center gap-2">{typedChildren}</span>
       </motion.button>
     );
   }
