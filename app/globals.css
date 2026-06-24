@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FCFCFB;
+    --background-secondary: #F6F5F2;
+    --foreground: #0A0A0A;
+    --foreground-secondary: #7A7975;
+    --accent: #C5A880;
+    --destructive: #A32A2A;
+    --success: #6E8E75;
+
+    /* Used for cards/containers */
+    --card-background: #FFFFFF;
+    --card-border: #E8E7E3;
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .card-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.01);
+  }
+
+  .card-border {
+    border: 1px solid var(--card-border);
+  }
+
+  /* Shimmer gradient animation using CSS background-position */
+  .shimmer-bg {
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
